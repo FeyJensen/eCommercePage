@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(to top, rgba(23, 135, 191, 0.74), rgb(157, 220, 251));
+  
+}
+
+
+
+h1 {
+  text-align: center;
+  padding: 20px, 0, 20px, 0;
+}
+
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background-color: rgb(50, 68, 74);
+}
+
+
+input[type=text] {
+  display: block;
+  width: 60%;
+  padding: 12px 10px;
+  margin: 8px auto 3px auto;
+  box-sizing: border-box;
+  border: 2px solid rgb(70, 88, 94);
+  border-radius: 4px;
+}
+
+.card-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.card-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
