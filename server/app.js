@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const jwt = require('jsonwebtoken');
 const { Pool } = require('pg');
+const multer = require('multer');
+
+const upload = multer({ storage: multer.memoryStorage() }); 
 
 const pool = new Pool({
   user: process.env.DB_USER,
@@ -47,14 +50,40 @@ app.get('/name', async(req, res) => {
 });
 
 //create listing
-app.post('/create', async(req, res) => {
-  const results = await pool.query('INSERT INTO items VALUES (DEFAULT, $1, $2, $3)', [req.body.name, req.body.price, req.body.quantity]);
-  console.log(results.rowCount);
-  if(results.rowCount === 1){
-  res.send({ message: 'Item created successfully', item: req.body });
+app.post('/create', upload.single('image_file'), async (req, res) => {
+  const { name, price, quantity } = req.body;
+  //store the image as a buffer in the DB:
+  const image_file = req.file ? req.file.buffer : null;
+
+  try {
+    const results = await pool.query(
+      'INSERT INTO items VALUES (DEFAULT, $1, $2, $3, $4)',
+      [name, price, quantity, image_file]
+    );
+    console.log(results.rowCount);
+    if (results.rowCount === 1) {
+      res.send({ message: 'Item created successfully', item: { name, price, quantity, image_file } });
+    } else {
+      res.status(400).send({ message: 'Error creating item' });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ message: 'Server error' });
   }
-  else {
-    res.status(400).send({ message: 'Error creating item' });
+});
+
+//get image by id
+app.get('/image/:id', async (req, res) => {
+  try {
+    const results = await pool.query('SELECT image_file FROM items WHERE id = $1', [req.params.id]);
+    if (results.rows.length && results.rows[0].image_file) {
+      res.set('Content-Type', 'image/jpeg'); 
+      res.send(results.rows[0].image_file);
+    } else {
+      res.status(404).send('Image not found');
+    }
+  } catch (err) {
+    res.status(500).send('Server error');
   }
 });
 
@@ -84,6 +113,8 @@ app.delete('/delete', async(req, res) => {
     res.status(400).send({ message: 'Error deleting item or item not found' });
   }
 });
+
+
 
 
 app.listen(3000, () => {

@@ -1,22 +1,33 @@
 body {
-  background: linear-gradient(to top, rgba(23, 135, 191, 0.74), rgb(157, 220, 251));
-  
+  background: linear-gradient(
+    to top right,
+    #f5e9da,   
+    #e7c9a9,   
+    #d9a47f    
+  );
 }
 
-
+.navbar-brand {
+  background-color: #d9a47f !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+}
+.navbar-brand:hover {
+  background-color: #b97a56 !important;
+  color: #fff !important;
+}
 
 h1 {
   text-align: center;
-  padding: 20px, 0, 20px, 0;
 }
 
-h2 {
-  text-align: center;
-  padding: 10px;
-}
+
 
 p {
-  text-align: center;
   font-size: 1.2em;
 }
 
@@ -44,15 +55,29 @@ input[type=text] {
 }
 
 .card-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: .4rem;
+  justify-items: center;
+  align-items: stretch;
+  padding: 0 .5rem;
+}
+.card-grid .card {
+  flex: 0 1 15rem;          
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-grid li {
+  color: #4e3d2c;
+  font-size: 1.05em;
+}
+
+.card-grid::after {
+  content: "";
+  flex: auto;
 }
 
 .card-center {
@@ -61,3 +86,70 @@ input[type=text] {
   align-items: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.preview-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.listing-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 200px;         
+  object-fit: cover;     
+  border-radius: 8px;    
+}
+
+body, h1, h2, h3, h4, h5, h6, p, label, .navbar-brand, button {
+  color: #4e3d2c !important;
+}
+
+h1, h2 {
+  color: #8d6748 !important;
+}
+
+.card {
+  background-color: #f8f4ef !important;
+  border: none;
+  box-shadow: 0 2px 8px rgba(141, 103, 72, 0.08);
+  border-radius: 12px;
+}
+
+.create-btn {
+  background-color: #d9a47f !important;
+  border: none !important;
+  color: #fff !important;
+}
+.create-btn:hover {
+  background-color: #b97a56 !important;
+}
+
+.dropzone {
+  border: 2px dashed #b97a56;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: #f8f4ef;
+  transition: border-color 0.2s;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.dropzone:focus,
+.dropzone:active {
+  border-color: #d9a47f;
+}
