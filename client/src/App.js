@@ -37,7 +37,7 @@ function App() {
   if (!user) {
     return <Login onLogin={setUser} />;
   }
-  
+
   function handleDelete(name) {
     fetch(`http://localhost:3001/delete`, {
       method: 'DELETE',
@@ -57,7 +57,7 @@ function App() {
   }
 
   function handleSubmit(event) {
-    //event.preventDefault();
+    event.preventDefault();
 
     const name = document.getElementById('name').value;
     const price = document.getElementById('price').value;
