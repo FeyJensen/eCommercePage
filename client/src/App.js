@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import { useDropzone } from 'react-dropzone'
+import Login from './Login';
 
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
   const [data, setData] = useState({});
   const [preview, setPreview] = useState(null);
   const [file, setFile] = useState(null);
+  const [user, setUser] = useState(null);
+
+  
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
@@ -30,6 +34,10 @@ function App() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  if (!user) {
+    return <Login onLogin={setUser} />;
+  }
+  
   function handleDelete(name) {
     fetch(`http://localhost:3001/delete`, {
       method: 'DELETE',

@@ -4,6 +4,7 @@ const app = express();
 const jwt = require('jsonwebtoken');
 const { Pool } = require('pg');
 const multer = require('multer');
+const bcrypt = require('bcrypt');  //external library for hashing passwords
 
 const upload = multer({ storage: multer.memoryStorage() }); 
 
@@ -116,6 +117,50 @@ app.delete('/delete', async(req, res) => {
 
 
 
+
+// Login route using users table
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    // Look up user by email
+    const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+    if (result.rows.length === 0) {
+      return res.status(401).send({ message: 'Invalid email or password' });
+    }
+    const user = result.rows[0];
+
+    // Compare hashed password
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+      return res.status(401).send({ message: 'Invalid email or password' });
+    }
+
+    // Generate JWT token
+    const token = jwt.sign({ email: user.email, id: user.id }, 'your_jwt_secret', { expiresIn: '1h' });
+    res.send({ message: 'Login successful', token });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ message: 'Server error' });
+  }
+});
+
+app.post('/register', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    // Check if user exists
+    const exists = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+    if (exists.rows.length > 0) {
+      return res.status(400).send({ message: 'User already exists' });
+    }
+    // Hash password
+    const hashed = await bcrypt.hash(password, 10);
+    await pool.query('INSERT INTO users (email, password) VALUES ($1, $2)', [email, hashed]);
+    res.send({ message: 'User created successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ message: 'Server error' });
+  }
+});
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
