@@ -85,6 +85,7 @@ Track progress and tasks on the [Trello Board](https://trello.com/b/M2WDHkXa/eco
 ## Screenshots
 <img width="999" alt="Screenshot 2025-07-01 at 3 00 23 PM" src="https://github.com/user-attachments/assets/167925a4-abc6-4f87-8a98-edcece387606" />
 <img width="979" alt="Screenshot 2025-07-01 at 3 00 34 PM" src="https://github.com/user-attachments/assets/fe2633db-88b4-49d9-a87d-a835c43d24fe" />
+<img width="979" alt="Screenshot 2025-07-01 at 10 46 56 PM" src="https://github.com/user-attachments/assets/65b8ffa3-b6f5-4722-9d57-8413f3b7fcbb" />
 
 
 ## License
