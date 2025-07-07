@@ -104,8 +104,9 @@ app.put('/update', async(req, res) => {
 })
 
 //delete listing
-app.delete('/delete', async(req, res) => {
-  const results = await pool.query('DELETE FROM items WHERE name = $1;', [req.body.name]);
+app.delete('/delete', async (req, res) => {
+  const { id } = req.body;
+  const results = await pool.query('DELETE FROM items WHERE id = $1;', [id]);
   console.log(results.rowCount);
   if (results.rowCount === 1) {
     console.log('Item deleted successfully');
@@ -114,8 +115,6 @@ app.delete('/delete', async(req, res) => {
     res.status(400).send({ message: 'Error deleting item or item not found' });
   }
 });
-
-
 
 
 // Login route using users table
