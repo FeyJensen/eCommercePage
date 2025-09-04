@@ -20,11 +20,12 @@ function Login({ onLogin }) {
       });
       const data = await response.json();
       if (response.ok) {
+
         if (isRegister) {
           setIsRegister(false);
           setError('Registration successful! Please log in.');
         } else {
-          onLogin(data);
+          onLogin({ data, email }); 
         }
       } else {
         setError(data.message || 'Error');
@@ -33,6 +34,8 @@ function Login({ onLogin }) {
       setError('Server error');
     }
   };
+
+  
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>

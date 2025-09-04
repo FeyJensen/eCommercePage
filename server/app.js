@@ -136,7 +136,7 @@ app.post('/login', async (req, res) => {
 
     // Generate JWT token
     const token = jwt.sign({ email: user.email, id: user.id }, 'your_jwt_secret', { expiresIn: '1h' });
-    res.send({ message: 'Login successful', token });
+    res.send({ message: 'Login successful', email: user.email, token });
   } catch (err) {
     console.error(err);
     res.status(500).send({ message: 'Server error' });
