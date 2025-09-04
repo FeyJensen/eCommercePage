@@ -68,8 +68,8 @@ This app is designed for sellers who want to manage products on their website. Y
    ```
 
 7. **Visit the app:**
-   - Open [http://localhost:3000](http://localhost:3001) in your browser for buyer.
-   - Open [http://localhost:3000/seller](http://localhost:3001/seller) in your browser for seller.
+   - Open [http://localhost:3000](http://localhost:3000) in your browser for buyer.
+   - Open [http://localhost:3000/seller](http://localhost:3000/seller) in your browser for seller.
 
 ## Usage
 
