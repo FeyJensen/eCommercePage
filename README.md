@@ -9,6 +9,9 @@ This app is designed for sellers who want to manage products on their website. Y
 - View all current listings in a responsive card grid
 - Delete listings with a single click
 - Inventory and pricing management
+- Login mandetory for seller
+- Login Optional for buyer
+- Seperate buyer page
 - Stylish, responsive UI using React Bootstrap and custom CSS
 
 ## Tech Stack
