@@ -3,11 +3,14 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './App.css';
 import Login from './Login';
+import { useNavigate } from "react-router-dom";
 
 function BuyerPage() {
   const [data, setData] = useState({});
   const [showLogin, setShowLogin] = useState(false);
   const [user, setUser] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:3001/all`)
@@ -42,7 +45,7 @@ function BuyerPage() {
             <Button
             className="create-btn"
             style={{ marginRight: "1rem" }}
-            onClick={() => alert("Cart feature coming soon!")}
+            onClick={() => navigate('/cart')}
           >
             Cart
           </Button>
