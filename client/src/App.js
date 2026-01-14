@@ -3,6 +3,9 @@ import BuyerPage from './BuyerPage';
 import SellerPage from './SellerPage';
 import CartPage from './CartPage';
 
+//npm run devStart(server)
+//npm start(client)
+
 function App() {
   return (
     <Router>

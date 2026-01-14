@@ -8,18 +8,15 @@ body {
 }
 
 .navbar-brand {
-  background-color: #d9a47f !important;
   border: none !important;
   color: #fff !important;
   font-weight: bold;
   letter-spacing: 1px;
   border-radius: 6px;
   padding: 0.5rem 1.2rem;
+  justify-content: right;
 }
-.navbar-brand:hover {
-  background-color: #b97a56 !important;
-  color: #fff !important;
-}
+
 
 h1 {
   text-align: center;
