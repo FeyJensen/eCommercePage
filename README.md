@@ -89,10 +89,15 @@ Track progress and tasks on the [Trello Board](https://trello.com/b/M2WDHkXa/eco
 ## Screenshots
 Buyer Page. What the customer sees with optional login.
 <img width="1258" height="605" alt="Screenshot 2025-09-04 at 9 15 07 AM" src="https://github.com/user-attachments/assets/63b9026f-275d-42a5-9952-c51dda3cf7bc" />
+
 Seller Page. With the ability to edit and add listings. Login is mandetory.
 <img width="1255" height="576" alt="Screenshot 2025-09-04 at 9 15 55 AM" src="https://github.com/user-attachments/assets/31ed3b14-1e01-45d9-a046-92f5aa3f6bc6" />
 <img width="802" height="521" alt="Screenshot 2025-09-04 at 9 15 17 AM" src="https://github.com/user-attachments/assets/dce18a2d-6d16-4bdc-b604-1a57e6527d3b" />
 <img width="1257" height="572" alt="Screenshot 2025-09-04 at 9 15 41 AM" src="https://github.com/user-attachments/assets/1534625e-43e0-4ee0-8e76-c8a5536e4b88" />
+
+Header and Footer
+<img width="1260" height="597" alt="Screenshot 2026-01-17 at 9 30 10 PM" src="https://github.com/user-attachments/assets/fd79d0ff-436b-407b-b569-f52a30ac28c7" />
+<img width="1257" height="597" alt="Screenshot 2026-01-17 at 9 30 01 PM" src="https://github.com/user-attachments/assets/12c7a03c-c1db-4174-9521-a7569ab13346" />
 
 
 ## License
