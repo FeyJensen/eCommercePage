@@ -90,7 +90,7 @@ Track progress and tasks on the [Trello Board](https://trello.com/b/M2WDHkXa/eco
 Buyer Page. What the customer sees with optional login.
 <img width="1258" height="605" alt="Screenshot 2025-09-04 at 9 15 07 AM" src="https://github.com/user-attachments/assets/63b9026f-275d-42a5-9952-c51dda3cf7bc" />
 
-Seller Page. With the ability to edit and add listings. Login is mandetory.
+Seller Page. With the ability to edit and add listings. Login is mandetory and only accessible with correct assigned roles.
 <img width="1255" height="576" alt="Screenshot 2025-09-04 at 9 15 55 AM" src="https://github.com/user-attachments/assets/31ed3b14-1e01-45d9-a046-92f5aa3f6bc6" />
 <img width="802" height="521" alt="Screenshot 2025-09-04 at 9 15 17 AM" src="https://github.com/user-attachments/assets/dce18a2d-6d16-4bdc-b604-1a57e6527d3b" />
 <img width="1257" height="572" alt="Screenshot 2025-09-04 at 9 15 41 AM" src="https://github.com/user-attachments/assets/1534625e-43e0-4ee0-8e76-c8a5536e4b88" />
