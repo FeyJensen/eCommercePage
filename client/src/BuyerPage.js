@@ -31,9 +31,8 @@ function BuyerPage() {
   return (
     <div>
       <ShopBanner
-        header={<Header />}
-        right={
-          <LoginAndCart
+        header={
+          <Header 
             showLogin={showLogin}
             user={user}
             onLoginClick={() => setShowLogin(true)}

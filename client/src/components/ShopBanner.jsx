@@ -7,7 +7,8 @@ export default function ShopBanner({ header, right }) {
         width: '100%',
         overflow: 'hidden',
         position: 'relative',
-        height: '380px'
+        height: '380px',
+        paddingTop: '80px'
       }}
     >
       <img
