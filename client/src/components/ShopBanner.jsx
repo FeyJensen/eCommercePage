@@ -8,7 +8,7 @@ export default function ShopBanner({ header, right }) {
         overflow: 'hidden',
         position: 'relative',
         height: '380px',
-        paddingTop: '80px'
+        paddingTop: '30px'
       }}
     >
       <img
@@ -20,8 +20,7 @@ export default function ShopBanner({ header, right }) {
           overflow: 'hidden',
           display: 'block',
           objectFit: 'cover',
-          objectPosition: 'center',
-          transform: 'scale(1.1)'
+          objectPosition: 'center'
         }}
       />
       <div

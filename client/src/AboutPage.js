@@ -5,12 +5,14 @@ import Footer from './components/footer.jsx';
 function AboutPage() {
     return (
         <>
+        <Header />
             <div style={{
                 width: '100%',
                 minWidth: '1000px',
                 overflow: 'hidden',
                 position: 'relative',
-                height: '380px'
+                height: '380px',
+                top: '20px',
             }}>
                 <img
                     src="images/AboutUs.png"
@@ -21,9 +23,7 @@ function AboutPage() {
                         overflow: 'hidden',
                         display: 'block',
                         objectFit: 'cover',
-                        objectPosition: 'center',
-                        transform: 'scale(.8)',
-                        paddingTop: '2rem'
+                        objectPosition: 'center'
                     }}
                 />
                 <div style={{
@@ -32,9 +32,9 @@ function AboutPage() {
                     right: 0,
                     top: '1rem',
                     zIndex: 10,
-                    padding: '0 1rem'
+
                 }}>
-                    <Header />
+                    
                 </div>
             </div>
 

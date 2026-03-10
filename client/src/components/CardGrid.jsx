@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 export default function CardGrid({ data, onAdd }) {
   return (
+    <div style={{ paddingLeft: '8rem', paddingRight: '8rem', paddingBottom: '8rem' }}>
     <div className="card-grid" style={{ gap: '.5rem', margin: '.5rem' }}>
       {data?.results ? (
         data.results.map((item) => (
@@ -33,6 +34,7 @@ export default function CardGrid({ data, onAdd }) {
       ) : (
         <p>Loading...</p>
       )}
+    </div>
     </div>
   );
 }

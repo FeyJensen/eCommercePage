@@ -1,11 +1,14 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Header from './components/Header';
+import Footer from './components/footer.jsx';
 
 
 function CartPage({ cartItems = [], onRemove, onCheckout }) {
   return (
     <div>
+      <Header />
       <nav
         className="navbar navbar-expand-lg navbar-custom"
         style={{
@@ -56,6 +59,7 @@ function CartPage({ cartItems = [], onRemove, onCheckout }) {
           </Button>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
