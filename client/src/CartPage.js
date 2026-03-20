@@ -7,8 +7,10 @@ import Footer from './components/footer.jsx';
 
 function CartPage({ cartItems = [], onRemove, onCheckout }) {
   return (
-    <div>
+    <div className="background">
+      
       <Header />
+      <div className="container">
       <nav
         className="navbar navbar-expand-lg navbar-custom"
         style={{
@@ -59,7 +61,9 @@ function CartPage({ cartItems = [], onRemove, onCheckout }) {
           </Button>
         </div>
       )}
+      </div>
       <Footer />
+      
     </div>
   );
 }

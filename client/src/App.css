@@ -7,6 +7,16 @@ body {
   );
 }
 
+.background {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.background > .container {
+  flex: 1;
+}
+
 .navbar-brand {
   border: none !important;
   color: #fff !important;

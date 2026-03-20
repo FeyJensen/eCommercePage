@@ -65,9 +65,6 @@ export default function Header() {
             }}
           />
           <div style={{ marginTop: '0.5rem' }}>
-            <Button variant="secondary" className="create-btn" onClick={() => setShowLogin(false)}>
-              Close
-            </Button>
           </div>
         </div>
       )}

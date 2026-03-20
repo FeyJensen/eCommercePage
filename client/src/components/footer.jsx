@@ -96,6 +96,7 @@ export default function Footer() {
               Wholesale (Faire)
             </a>
             <a href="mailto:feyviolin@gmail.com" style={styles.link}>Contact</a>
+            <a href="/seller" style={styles.link}>Admin</a>
           </nav>
 
           <div style={{ ...styles.col, ...styles.connectCol }}>

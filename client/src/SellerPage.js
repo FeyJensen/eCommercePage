@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import { useDropzone } from 'react-dropzone'
 import Login from './Login';
+import Footer from './components/footer.jsx';
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [createMessage, setCreateMessage] = useState('');
   const [isCreating, setIsCreating] = useState(false);
+    // Get admin email from environment variable
+    const ADMIN_EMAIL = process.env.REACT_APP_ADMIN_EMAIL;
 
 
 
@@ -39,6 +42,15 @@ function App() {
   if (!user) {
     return <Login onLogin={setUser} />;
   }
+    // Restrict access to admin only
+    if (user && user.email !== ADMIN_EMAIL) {
+      return (
+        <div style={{textAlign: 'center', marginTop: '4rem'}}>
+          <h2>Access Denied</h2>
+          <p>You do not have permission to view this page.</p>
+        </div>
+      );
+    }
 
   function handleDelete(id) {
     fetch(`http://localhost:3001/delete`, {
@@ -108,22 +120,12 @@ function App() {
     });
 }
 
-  function refreshPage() {
-    window.location.reload();
-  }
 
 
   return (
     <>
       <div>
         <nav className="navbar navbar-expand-lg navbar-custom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Button
-            className="navbar-brand"
-            style={{ marginBottom: '.5rem', marginLeft: '.5rem' }}
-            onClick={refreshPage}
-          >
-            Home
-          </Button>
           <Button
             variant="outline-secondary"
             style={{ marginRight: '.8rem', marginBottom: '.5rem' }}
@@ -203,6 +205,7 @@ function App() {
           )}
         </div>
       </div>
+      <Footer />
     </>
   )
 }
