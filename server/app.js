@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const { Pool } = require('pg');
 const multer = require('multer');
 const bcrypt = require('bcrypt');  //external library for hashing passwords
+const cartRouter = require('./cart');
 
 const upload = multer({ storage: multer.memoryStorage() }); 
 
@@ -16,7 +17,8 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-app.use(express.json());
+app.use(express.json({ limit: '5mb' }));
+app.use(cartRouter);
 
 //get all item listings
 app.get('/all', async(req, res) => {

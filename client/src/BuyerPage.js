@@ -19,8 +19,31 @@ function BuyerPage() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  function handleAddToCart(item) {
-    setCart((prevCart) => [...prevCart, item]);
+  async function handleAddToCart(item) {
+    try {
+      const response = await fetch('http://localhost:3001/cart/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: item.name,
+          quantity: 1, // default add 1 to cart
+          price: item.price,
+          cartTotal: item.price // for single item, cartTotal = price
+        }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setCart((prevCart) => [...prevCart, data.cartItem]);
+        alert('Added to cart!');
+      } else {
+        alert(data.message || 'Error adding to cart');
+      }
+    } catch (err) {
+      alert('Error adding to cart');
+      console.error(err);
+    }
   }
 
   return (

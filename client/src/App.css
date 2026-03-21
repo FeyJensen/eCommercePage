@@ -1,9 +1,8 @@
 body {
   background: linear-gradient(
-    to top right,
-    #f5e9da,   
-    #e7c9a9,   
-    #d9a47f    
+    to top,
+    #fefefe,     
+    #ffdcc4    
   );
 }
 
@@ -47,7 +46,7 @@ p {
 }
 
 button:hover {
-  background-color: rgb(50, 68, 74);
+  background-color: rgb(158, 87, 2);
 }
 
 
